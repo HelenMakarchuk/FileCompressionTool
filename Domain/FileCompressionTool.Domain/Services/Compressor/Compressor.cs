@@ -96,11 +96,11 @@ namespace FileCompressionTool.Domain.Services.Compressor
         {
             if (!_isDisposed)
             {
-                _tokenSource.Cancel();
+                _tokenSource?.Cancel();
 
                 if (disposeManagedResources)
                 {
-                    foreach (EventHandler<BlockEventArgs> eventDelegate in BlockCompressed.GetInvocationList())
+                    foreach (EventHandler<BlockEventArgs> eventDelegate in BlockCompressed?.GetInvocationList())
                         BlockCompressed -= eventDelegate;
                 }
 

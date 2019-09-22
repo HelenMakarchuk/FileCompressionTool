@@ -109,7 +109,7 @@ namespace FileCompressionTool.Domain.Commands
         {
             if (!_isDisposed)
             {
-                _tokenSource.Cancel();
+                _tokenSource?.Cancel();
 
                 if (disposeManagedResources)
                 {

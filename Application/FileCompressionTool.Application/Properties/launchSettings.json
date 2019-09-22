@@ -1,8 +1,7 @@
 {
   "profiles": {
     "FileCompressionTool.Application": {
-      "commandName": "Project",
-      "commandLineArgs": "decompress \"C:\\Files\\Target\\2 GB.txt\" \"C:\\Files\\Decompressed\\2 GB.txt\""
+      "commandName": "Project"
     }
   }
 }

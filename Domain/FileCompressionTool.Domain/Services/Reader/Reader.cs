@@ -92,11 +92,11 @@ namespace FileCompressionTool.Domain.Services.Reader
         {
             if (!_isDisposed)
             {
-                _tokenSource.Cancel();
+                _tokenSource?.Cancel();
 
                 if (disposeManagedResources)
                 {
-                    foreach (EventHandler<BlockEventArgs> eventDelegate in BlockRead.GetInvocationList())
+                    foreach (EventHandler<BlockEventArgs> eventDelegate in BlockRead?.GetInvocationList())
                         BlockRead -= eventDelegate;
                 }
 

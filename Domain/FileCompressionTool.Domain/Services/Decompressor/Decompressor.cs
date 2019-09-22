@@ -87,11 +87,11 @@ namespace FileCompressionTool.Domain.Services.Decompressor
         {
             if (!_isDisposed)
             {
-                _tokenSource.Cancel();
+                _tokenSource?.Cancel();
 
                 if (disposeManagedResources)
                 {
-                    foreach (EventHandler<BlockEventArgs> eventDelegate in BlockDecompressed.GetInvocationList())
+                    foreach (EventHandler<BlockEventArgs> eventDelegate in BlockDecompressed?.GetInvocationList())
                         BlockDecompressed -= eventDelegate;
                 }
 

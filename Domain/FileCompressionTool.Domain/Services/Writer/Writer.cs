@@ -143,14 +143,14 @@ namespace FileCompressionTool.Domain.Services.Writer
         {
             if (!_isDisposed)
             {
-                _tokenSource.Cancel();
+                _tokenSource?.Cancel();
 
                 if (disposeManagedResources)
                 {
-                    foreach (EventHandler<ScheduleWriteBlockEventArgs> eventDelegate in BlockScheduled.GetInvocationList())
+                    foreach (EventHandler<ScheduleWriteBlockEventArgs> eventDelegate in BlockScheduled?.GetInvocationList())
                         BlockScheduled -= eventDelegate;
 
-                    foreach (var block in _waitingBlocks.Values)
+                    foreach (var block in _waitingBlocks?.Values)
                         block.Dispose();
 
                     _waitingBlocks = null;
